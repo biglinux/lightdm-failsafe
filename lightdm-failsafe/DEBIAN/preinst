@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+package_name=lightdm-failsafe
+mkdir -p "/usr/share/dpkgdivert/lightdm-failsafe"
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/lightdm-failsafe/libsystemdsystemlightdm.service" --rename "/lib/systemd/system/lightdm.service"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/lib/systemd/system/lightdm.service")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/lightdm-failsafe/libsystemdsystemlightdm.service" --rename "/lib/systemd/system/lightdm.service"
+fi
+;;
+esac
+exit 0

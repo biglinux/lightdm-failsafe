@@ -1,0 +1,7 @@
+#!/bin/dash
+
+if [ "$(lspci | grep VGA | grep NVIDIA)" != "" ]; then
+    modprobe nouveau
+fi
+
+/usr/sbin/lightdm -c /etc/lightdm/lightdm-failsafe.conf

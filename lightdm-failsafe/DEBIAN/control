@@ -1,0 +1,11 @@
+Package: lightdm-failsafe
+Version: 1.0.0-1big1
+Depends: lightdm
+Architecture: all
+Maintainer: Bruno Goncalves <www.biglinux.com.br>
+Section: admin
+Priority: optional
+Installed-Size:76
+Description: Prevents system from running out of graphics mode
+
+

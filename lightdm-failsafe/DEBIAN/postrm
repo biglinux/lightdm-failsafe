@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+package_name=lightdm-failsafe
+case "$1" in
+  remove)
+    dpkg-divert --package "$package_name" --rename --remove "/lib/systemd/system/lightdm.service"
+    ;;
+  purge)
+    dpkg-divert --package "$package_name" --rename --remove "/lib/systemd/system/lightdm.service"
+;;
+esac
+exit 0

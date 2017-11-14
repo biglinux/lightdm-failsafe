@@ -1,0 +1,6 @@
+[Unit]
+Description=Use if lightdm fail
+    
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/lightdm-failsafe
