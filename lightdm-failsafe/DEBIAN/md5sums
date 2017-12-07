@@ -1,9 +1,10 @@
 b3433d9f6081d5e93787679c86952984  etc/lightdm/lightdm-failsafe.conf
+8d1fa2934a78d43f51db48f00aa38eb9  etc/sudoers.d/sudo_env
 e8c7d918602fb8248ddc98bfe82bcc0e  lib/systemd/system/lightdm-failsafe.service
 f9c5c4caaab7e345554293b0bf04031e  lib/systemd/system/lightdm.service
 bf0ab2c076b26dd8e8724831ecd4d6a8  DEBIAN/dpkg-divert
 889be91c751a744c1a57ec81e956452b  DEBIAN/postrm
-7e96788d93b9254d5402021c7853cec0  DEBIAN/control
-6bb549350e761c2892b45445121f25ad  DEBIAN/preinst
+1adf99a01de223e745cc38181888a18c  DEBIAN/control
+d3344623e088cb0f8668a8efdb8bb29a  DEBIAN/preinst
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 a7cd7313e953eb440ba23e58d9ce1139  usr/sbin/lightdm-failsafe

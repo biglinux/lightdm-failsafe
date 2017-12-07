@@ -2,6 +2,11 @@
 set -e
 package_name=lightdm-failsafe
 mkdir -p "/usr/share/dpkgdivert/lightdm-failsafe"
+
+if [ "$(grep IGNORE_CC_MISMATCH=1 /etc/environment)" = "" ]; then
+    echo "IGNORE_CC_MISMATCH=1" > /etc/environment
+fi
+
 case "$1" in
   install)
     dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/lightdm-failsafe/libsystemdsystemlightdm.service" --rename "/lib/systemd/system/lightdm.service"
